@@ -1,0 +1,12 @@
+#drum-set {
+    display: flex;
+    justify-content: space-around;
+}
+
+.drum-pad {
+    background-color: grey;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    border: 1px solid black;
+}
