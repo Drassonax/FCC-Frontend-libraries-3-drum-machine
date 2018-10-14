@@ -1,6 +1,6 @@
 import React from 'react'
 import Display from './Display'
-import DrumPad from './DrumPad'
+import Drumset from './Drumset'
 
 const pads = [
     {
@@ -49,7 +49,6 @@ const pads = [
         url: 'https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3'
     }
 ]
-
 class DrumMachine extends React.Component {
     constructor(props) {
         super(props)
@@ -87,11 +86,7 @@ class DrumMachine extends React.Component {
 
         return (
             <div id="drum-machine">
-                <div id="drum-set">
-                    {this.state.pads.map((pad) => (
-                        <DrumPad key={pad.clip} clipName={pad.clip} button={pad.button} clipSrc={pad.url} playSoundClip={this.playSoundClip} />
-                    ))}
-                </div>
+                <Drumset play={this.playSoundClip} />
                 <Display clipName={this.state.playingClip} />
             </div>
         )
