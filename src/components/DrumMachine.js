@@ -63,6 +63,11 @@ class DrumMachine extends React.Component {
         soundClip.currentTime = 0
         soundClip.play()
         this.setState({ playingClip: clipName})
+        const hitPad = document.getElementById(`btn-${clipButton}`)
+        hitPad.setAttribute('class', 'pad activated')
+        setTimeout(() => {
+            hitPad.setAttribute('class', 'pad')
+        }, 100);
     }
     componentDidMount() {
         document.addEventListener('keypress', (e) => {
